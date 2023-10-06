@@ -109,14 +109,14 @@ h3 {
     max-inline-size: 100%;
 }
 
-/* Stats */
+/* Stats and Donations */
 
-.stats-block{
+.stats-block, .donations-block {
     background-color: #1E1F27;
     color: white;
 }
 
-.stats-block-div {
+.stats-block-div, .donations-block-div {
     margin-inline: 7em;
     justify-content: center;
     align-items: center;
@@ -124,7 +124,7 @@ h3 {
     flex-direction: column;
 }
 
-h2 {
+.stats-block h2 {
     font-size: 3.5em;
     padding-block: 1.45em;
     display: flex;
@@ -177,11 +177,89 @@ h2 {
     grid-area: tails-text;
 }
 
-.stats-block-dl div {
+.stats-block h2 {
+    font-size: 3.5em;
+    padding-block: 1.45em;
+    display: flex;
+    margin: 0;
+    text-align: center;
+}
+
+/* Donations */
+
+.donations-block-div {
+    margin-inline: 7em;
+    padding-block: 5em 7.5em;
+}
+
+.donations-block h2 {
+    font-size: 3.5em;
+    display: flex;
+    margin: 0;
+    text-align: center;
+}
+
+.donations-block-dl > div {
+    border-radius: 24px;
+    border: 2px solid white;
+    height: 0;
+    padding-bottom: 100%;
+    margin: 1%;
+    float: left;
+    position: relative;
+}
+
+.donations-block-dl {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-areas:    "item-shelter item-vetting item-facilities"
+                            "item-transport item-fosters item-food";
+    grid-column-gap: 2.5em;
+    grid-row-gap: 3.8em;
+    justify-items: center;
+}
+
+.donations-block-dl dt {
+    font-size: 2em;
+    font-weight: 700;
+    margin: 0;
+}
+
+.donations-block-dl dd {
+    margin: 0;
+    font-size: 1.25em;
+    font-weight: 500;
+    line-height: 160%
+}
+
+.inside-card {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    margin: 1.5em;
     align-items: center;
-    gap: 1em;
-    flex-direction: column;
+}
+
+.item-shelter {
+    grid-area: item-shelter;
+}
+
+.item-vetting {
+    grid-area: item-vetting;
+}
+
+.item-facilities {
+    grid-area: item-facilities;
+}
+
+.item-transport {
+    grid-area: item-transport;
+}
+
+.item-fosters {
+    grid-area: item-fosters;
+}
+
+.item-food {
+    grid-area: item-food;
 }
