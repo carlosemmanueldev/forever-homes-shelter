@@ -98,7 +98,7 @@ nav li {
     justify-items: end;
 }
 
-.main-content-buttons {
+.main-content-buttons, .adopt-block-buttons {
     display: flex;
     gap: 2em;
     margin-block-start: 1.5em;
@@ -346,7 +346,6 @@ nav li {
 .difference-block-second-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-template-areas: "left-text right-text";
     grid-column-gap: 2.5em;
     grid-row-gap: 3.8em;
     justify-items: center;
@@ -390,3 +389,48 @@ nav li {
     background-color: #5758F1;
     color: white;
 }
+
+/* Adopt Block */
+
+.adopt-block-div {
+    margin-inline: 7em;
+    padding-block-start: 5em;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.adopt-block-div div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.adopt-block-div b{
+    font-size: 1em;
+    font-weight: 700;
+    margin: 0;
+    color: #F8DB46;
+}
+
+.adopt-block-div h2 {
+    line-height: 120%; /* 67.2px */
+    letter-spacing: -1.12px;
+}
+
+.adopt-block-div p {
+    font-size: 2em;
+    margin-block: 1.9em 1.25em;
+}
+
+.adopt-block-button-view {
+    background-color: #F8DB46;
+}
+
+.adopt-block-button-apply {
+    background-color: #1E1F27;
+    color: white;
+    border: 2px solid white;
+}
+
