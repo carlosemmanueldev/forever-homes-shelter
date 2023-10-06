@@ -434,3 +434,50 @@ nav li {
     border: 2px solid white;
 }
 
+/* Subscription Block */
+
+.subscription-block {
+    background-color: #5758F1;
+    color: white;
+}
+
+.subscription-block-div {
+    margin-inline: 7em;
+    padding-block: 5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.subscription-block-div p {
+    color: rgba(255, 255, 255, 0.80);
+    font-weight: 400;
+    font-size: 1.25em;
+    margin-block: 0.75em 3em;
+}
+
+.subscription-block-div input::placeholder {
+    color: rgba(255, 255, 255, 0.50);
+    font-weight: 400;
+}
+
+.subscription-block-div form {
+    display: flex;
+    gap: 1.5em;
+}
+
+.subscription-block-div input {
+    border-radius: 32px;
+    border: 2px solid white;
+    background-color: #5758F1;
+    color: white;
+    font-weight: 400;
+    padding-inline-start: 1em;
+    font-size: 1.25em;
+}
+
+.subscription-block-div button {
+    font-size: 1.25em;
+}
+
+
