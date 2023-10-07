@@ -37,7 +37,11 @@ p {
     font-weight: 500;
 }
 
-nav {
+address {
+    font-style: normal;
+}
+
+body > nav {
     border-block-end: 2px solid #1e1f27;
     font-weight: 700;
     display: flex;
@@ -47,7 +51,7 @@ nav {
     margin-inline: 7em;
 }
 
-nav ul {
+body > nav ul {
     display: flex;
     list-style-type: none;
     padding-inline-start: 0;
@@ -55,7 +59,7 @@ nav ul {
     gap: 2em;
 }
 
-nav li {
+body > nav li {
     align-items: center;
     justify-content: center;
     display: flex;
@@ -480,4 +484,95 @@ nav li {
     font-size: 1.25em;
 }
 
+/* Footer */
 
+footer {
+    padding-block: 5em;
+    margin-inline: 7em;
+
+}
+
+footer p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+
+footer nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 2em;
+    margin-block-end: 4em;
+}
+
+.footer-logo {
+    display: flex;
+    gap: 1.25em;
+    flex-direction: column;
+}
+
+.footer-logo-img {
+    max-width: 30%;
+}
+
+.footer-logo-text-heart-icon {
+    display: flex;
+}
+
+footer ul {
+    padding: 0;
+    margin: 0;
+}
+
+footer li {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    row-gap: 3em;
+    font-size: 1.25em;
+    font-weight: 700;
+    line-height: 160%;
+    margin-block: 1em;
+}
+
+footer li:first-child {
+    margin-block-start: 0;
+}
+
+address {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+address div {
+    display: flex;
+    align-items: center;
+}
+
+.address-street img, .address-phone img, .address-mail img {
+   padding-inline-end: 0.75em;
+}
+
+.address-street {
+    align-items: flex-start;
+}
+
+.social-media-icons {
+    gap: 1.25em;
+    padding: 0;
+}
+
+.footer-message {
+    border-block-start: 2px solid #1e1f27;
+    padding-block-start: 2em;
+    text-align: center;
+}
+
+.footer-message b {
+    font-size: 1em;
+    font-weight: 700;
+    margin: 0;
+    color: #FF3D9A;
+}
