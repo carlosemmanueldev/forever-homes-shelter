@@ -449,8 +449,9 @@ body > nav li {
     margin-inline: 7em;
     padding-block: 5em;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .subscription-block-div p {
@@ -458,6 +459,8 @@ body > nav li {
     font-weight: 400;
     font-size: 1.25em;
     margin-block: 0.75em 3em;
+    max-width: 38em;
+    text-align: center;
 }
 
 .subscription-block-div input::placeholder {
@@ -468,6 +471,8 @@ body > nav li {
 .subscription-block-div form {
     display: flex;
     gap: 1.5em;
+    width: 100%;
+    justify-content: center;
 }
 
 .subscription-block-div input {
@@ -478,6 +483,7 @@ body > nav li {
     font-weight: 400;
     padding-inline-start: 1em;
     font-size: 1.25em;
+    width: 28%;
 }
 
 .subscription-block-div button {
@@ -557,6 +563,10 @@ address div {
 
 .address-street {
     align-items: flex-start;
+}
+
+.address-street img {
+    padding-block-start: 0.3em;
 }
 
 .social-media-icons {
