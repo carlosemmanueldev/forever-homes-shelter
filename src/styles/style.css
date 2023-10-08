@@ -37,6 +37,10 @@ p {
     font-weight: 500;
 }
 
+dl {
+    margin: 0;
+}
+
 address {
     font-style: normal;
 }
@@ -61,10 +65,14 @@ body > nav ul {
 
 body > nav li {
     align-items: center;
-    justify-content: center;
     display: flex;
     font-size: 1.25em;
     gap: 0.5em;
+}
+
+.nav-logo {
+    width: 3em;
+    overflow: hidden;
 }
 
 .btn-rounded {
@@ -123,7 +131,7 @@ body > nav li {
     max-inline-size: 100%;
 }
 
-/* Stats and Donations */
+/* Stats Block */
 
 .stats-block, .donations-block, .difference-block, .adopt-block {
     background-color: #1E1F27;
@@ -132,16 +140,17 @@ body > nav li {
 
 .stats-block-div, .donations-block-div {
     margin-inline: 7em;
+    padding-block: 5em;
     justify-content: center;
     align-items: center;
     display: flex;
     flex-direction: column;
 }
 
-.stats-block h2 {
-    padding-block: 1.45em;
+.stats-block h2, .adoption-block h2 {
     display: flex;
     text-align: center;
+    margin-block-end: 1.5em;
 }
 
 .stats-block-dl {
@@ -151,6 +160,7 @@ body > nav li {
     grid-column-gap: 6em;
     justify-items: center;
     grid-row-gap: 1em;
+    margin-block-end: 5em;
 }
 
 .stats-block-dl dt {
@@ -189,13 +199,7 @@ body > nav li {
     grid-area: tails-text;
 }
 
-.stats-block h2, .adoption-block h2 {
-    padding-block: 1.45em;
-    display: flex;
-    text-align: center;
-}
-
-/* Donations */
+/* Donations Block */
 
 .donations-block-div {
     margin-inline: 7em;
@@ -225,6 +229,7 @@ body > nav li {
     grid-column-gap: 2.5em;
     grid-row-gap: 3.8em;
     justify-items: center;
+    margin-block-start: 5em;
 }
 
 .donations-block-dl dt {
@@ -397,35 +402,68 @@ body > nav li {
 /* Adopt Block */
 
 .adopt-block-div {
-    margin-inline: 7em;
+    margin-inline: 4em;
     padding-block-start: 5em;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 0.5fr 2fr 0.5fr;
+    grid-template-rows: 1fr 1fr 2fr;
+    grid-template-areas:    "adopt-block-fish adopt-block-h2 adopt-block-bone"
+                            "adopt-block-cat-img adopt-block-p adopt-block-dog-img"
+                            "adopt-block-cat-img adopt-block-buttons adopt-block-dog-img"
+                            "adopt-block-cat-img adopt-block-buttons adopt-block-dog-img";
     justify-items: center;
     align-items: center;
 }
 
-.adopt-block-div div {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.adopt-block-h2 {
+    grid-area: adopt-block-h2;
+    line-height: 120%;
+    letter-spacing: -1.12px;
 }
 
-.adopt-block-div b{
+.adopt-block-h2 b {
     font-size: 1em;
     font-weight: 700;
     margin: 0;
     color: #F8DB46;
 }
 
-.adopt-block-div h2 {
-    line-height: 120%; /* 67.2px */
-    letter-spacing: -1.12px;
+.adopt-block-p {
+    grid-area: adopt-block-p;
+    font-size: 2em;
+    margin: 0;
+    align-self: self-end;
 }
 
-.adopt-block-div p {
-    font-size: 2em;
-    margin-block: 1.9em 1.25em;
+.adopt-block-fish {
+    grid-area: adopt-block-fish;
+    justify-self: self-end;
+    padding-inline-end: 3em;
+}
+
+.adopt-block-bone {
+    grid-area: adopt-block-bone;
+    justify-self: self-start;
+    padding-inline-start: 3em;
+}
+
+.adopt-block-cat-img {
+    grid-area: adopt-block-cat-img;
+    justify-self: self-end;
+}
+
+
+.adopt-block-dog-img {
+    grid-area: adopt-block-dog-img;
+    justify-self: self-start;
+}
+
+.adopt-block-buttons {
+    align-self: center;
+}
+
+.adopt-block-buttons > button {
+    font-size: 1.25em;
 }
 
 .adopt-block-button-view {
