@@ -21,15 +21,25 @@ h2 {
 }
 
 h3 {
-    font-size: 2em;
+    font-size: 3em;
     font-weight: 700;
     margin: 0;
 }
 
 h4 {
+    font-size: 2em;
+    font-weight: 700;
+    margin: 0;
+}
+
+h5 {
     font-size: 1.5em;
     font-weight: 700;
     margin: 0;
+}
+
+a {
+    text-decoration: none;
 }
 
 p {
@@ -86,11 +96,16 @@ body > nav li {
     padding: 0.8em 1.6em;
     font-size: 1em;
     max-height: 3em;
+    cursor: pointer;
 }
 
 .donate-button {
     background-color: #ff3d9a;
     color: white;
+}
+
+.donate-button:hover {
+    background-color: #c03076;
 }
 
 /* Main Content */
@@ -127,13 +142,17 @@ body > nav li {
     font-size: 1.25em;
 }
 
+.adopt-button:hover {
+    background-color: #d0d0d0;
+}
+
 .main-content img {
     max-inline-size: 100%;
 }
 
 /* Stats Block */
 
-.stats-block, .donations-block, .difference-block, .adopt-block {
+.stats-block, .donations-block, .difference-block, .adopt-block, .adoptables-page {
     background-color: #1E1F27;
     color: white;
 }
@@ -199,11 +218,60 @@ body > nav li {
     grid-area: tails-text;
 }
 
+.carousel {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.gallery {
+    overflow-x: auto;
+}
+
+.carousel-images {
+    display: flex;
+    flex-flow: nowrap;
+    gap: 1.5em;
+}
+
+.arrow-left, .arrow-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F5F5;
+    color: #1E1F27;
+    border-radius: 21px;
+}
+
+.arrow-left {
+    margin-inline-end: 2em;
+}
+
+.arrow-right {
+    margin-inline-start: 2em;
+}
+
+.gallery-item {
+
+}
+
+.gallery::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.gallery {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
 /* Donations Block */
 
 .donations-block-div {
     margin-inline: 7em;
     padding-block: 5em 7.5em;
+    gap: 6em;
 }
 
 .donations-block h2 {
@@ -211,70 +279,45 @@ body > nav li {
     text-align: center;
 }
 
-.donations-block-dl > div {
+.donations-block-grid{
+    display: grid;
+    gap: 3em;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.donations-block-items {
+    display: flex;
+    flex-direction: column;
+    padding: 2em 2em;
     border-radius: 24px;
     border: 2px solid white;
-    height: 0;
-    padding-bottom: 100%;
-    margin: 1%;
-    float: left;
-    position: relative;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    max-inline-size: 100%;
 }
 
-.donations-block-dl {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-template-areas:    "item-shelter item-vetting item-facilities"
-                            "item-transport item-fosters item-food";
-    grid-column-gap: 2.5em;
-    grid-row-gap: 3.8em;
-    justify-items: center;
-    margin-block-start: 5em;
+.donations-block-items div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    align-items: center;
+    width: 100%;
 }
 
-.donations-block-dl dt {
-    font-size: 2em;
+.donations-block-items dt {
+    font-size: 2.5em;
     font-weight: 700;
     margin: 0;
 }
 
-.donations-block-dl dd {
+.donations-block-items dd {
     margin: 0;
-    font-size: 1.25em;
-    font-weight: 500;
-    line-height: 160%
-}
-
-.inside-card {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 1.5em;
-    align-items: center;
-}
-
-.item-shelter {
-    grid-area: item-shelter;
-}
-
-.item-vetting {
-    grid-area: item-vetting;
-}
-
-.item-facilities {
-    grid-area: item-facilities;
-}
-
-.item-transport {
-    grid-area: item-transport;
-}
-
-.item-fosters {
-    grid-area: item-fosters;
-}
-
-.item-food {
-    grid-area: item-food;
+    font-size: 1.5em;
+    text-align: start;
+    color: rgba(255, 255, 255, 0.80);
+    line-height: 160%;
 }
 
 /* Adoption Block */
@@ -320,6 +363,13 @@ body > nav li {
     color: white;
     background-color: #1E1F27;
     font-size: 1.25em;
+    border: 2px solid #1E1F27;
+}
+
+.adoption-block-btn:hover {
+    background-color: white;
+    color: #1E1F27;
+    cursor: pointer;
 }
 
 /* Difference block */
@@ -327,6 +377,9 @@ body > nav li {
 .difference-block-div {
     margin-inline: 7em;
     padding-block: 5em 7.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 6em;
 }
 
 .difference-block-first-grid {
@@ -352,6 +405,10 @@ body > nav li {
     grid-area: right-heart;
 }
 
+.difference-block .inside-card {
+    justify-content: center;
+}
+
 .difference-block-second-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -372,6 +429,8 @@ body > nav li {
 
 .difference-block-second-grid p {
     font-size: 1.25em;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.80);
 }
 
 .difference-block-button-adoptables, .difference-block-button-involved,
@@ -390,12 +449,12 @@ body > nav li {
 }
 
 .difference-block-button-monthly {
-    background-color: #FF3D9A;
+    background-color: #5758F1;
     color: white;
 }
 
 .difference-block-button-learn {
-    background-color: #5758F1;
+    background-color: #FF3D9A;
     color: white;
 }
 
@@ -430,7 +489,7 @@ body > nav li {
 
 .adopt-block-p {
     grid-area: adopt-block-p;
-    font-size: 2em;
+    font-size: 2.5em;
     margin: 0;
     align-self: self-end;
 }
@@ -449,13 +508,13 @@ body > nav li {
 
 .adopt-block-cat-img {
     grid-area: adopt-block-cat-img;
-    justify-self: self-end;
+    align-self: flex-end;
 }
 
 
 .adopt-block-dog-img {
     grid-area: adopt-block-dog-img;
-    justify-self: self-start;
+    align-self: flex-end;
 }
 
 .adopt-block-buttons {
@@ -463,17 +522,31 @@ body > nav li {
 }
 
 .adopt-block-buttons > button {
-    font-size: 1.25em;
+    font-size: 1.5em;
+}
+
+.adopt-block-button-view:hover {
+    background-color: #1e1f27;
+    color: #F8DB46;
 }
 
 .adopt-block-button-view {
     background-color: #F8DB46;
+    color: #1E1F27;
+    font-size: 1.5em;
+    border: 2px solid #F8DB46;
 }
 
 .adopt-block-button-apply {
     background-color: #1E1F27;
     color: white;
     border: 2px solid white;
+}
+
+.adopt-block-button-apply:hover {
+    background-color: white;
+    color: #1e1f27;
+    cursor: pointer;
 }
 
 /* Subscription Block */
@@ -524,8 +597,18 @@ body > nav li {
     width: 28%;
 }
 
+.subscription-block-div input:focus-visible {
+    outline: white;
+}
 .subscription-block-div button {
     font-size: 1.25em;
+    border: 2px solid white;
+}
+
+.subscription-block-div button:hover {
+    background-color: #5758F1;
+    color: white;
+    cursor: pointer;
 }
 
 /* Footer */
@@ -623,4 +706,423 @@ address div {
     font-weight: 700;
     margin: 0;
     color: #FF3D9A;
+}
+
+/* Dialog */
+
+dialog {
+    padding: 2em;
+    border: none;
+    border-radius: 2em;
+    max-width: 370px;
+}
+
+.dialog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+dialog p {
+    font-size: 1.1em;
+    font-weight: 500;
+    line-height: 133.333%;
+    margin: 0;
+    letter-spacing: -0.36px;
+    margin-block-end: 2.5em;
+}
+
+dialog form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5em;
+    align-items: center;
+}
+
+dialog label {
+    color: #FF3D9A;
+    font-weight: 700;
+    font-size: 0.75em;
+    margin-block-end: 0.75em;
+}
+
+dialog b {
+    color: #3F96FC;
+    font-weight: 700;
+    font-size: 1em;
+}
+
+dialog input, dialog select {
+    border-radius: 8px;
+    border: 1px solid #3F96FC;
+    align-self: stretch;
+    padding: 1em;
+    font-weight: 500;
+}
+
+dialog input:focus, dialog select:focus {
+    outline-color: #937AFF;
+}
+
+dialog select {
+    width: 33%;
+    background: url(../assets/expand-more.svg) no-repeat center right #FFF;
+    appearance: none;
+}
+
+dialog div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.birthday div {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75em;
+}
+
+.dialog-buttons {
+    display: flex;
+    gap: 0.75em;
+}
+
+.dialog-buttons > div {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 0.75em;
+}
+
+.dialog-buttons b {
+    color: #FF3D9A;
+}
+
+.dialog-buttons label {
+    color: #1E1F27;
+    margin: 0;
+    gap: 0.75em;
+}
+
+.dialog-button {
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    display: flex;
+    padding: 1em 1.5em;
+    font-weight: 700;
+    color: #f5f5f5;
+    border: none;
+    cursor: pointer;
+}
+
+.adopt-dialog-button {
+    background-color: #04C27F;
+}
+
+.adopt-dialog-button:hover {
+    background-color: #039f6a;
+}
+
+.cancel-dialog-button {
+    background-color: #37383F;
+    color: #f5f5f5;
+}
+
+.cancel-dialog-button:hover {
+    background-color: #25262a;
+}
+
+.donate-modal-h3 {
+    text-align: center;
+    margin-block-end: 1em;
+}
+
+#donate-modal button {
+    font-size: 1.25em;
+}
+
+/* Adoptables Page */
+
+.adoptables-page-nav, .success-page-nav {
+    border: none;
+}
+
+.adoptables-page-div {
+    display: flex;
+    flex-direction: column;
+    margin-inline: 7em;
+    padding-block: 5em;
+    gap: 4em;
+    align-items: center;
+}
+
+.adoptables-page-div .cancel-dialog-button {
+    width: 12%;
+    font-size: 1.25em;
+}
+
+.adoptables-page-grid {
+    display: grid;
+    gap: 3.75em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.adoptables-page-grid img {
+    max-inline-size: 100%;
+}
+
+.adoptables-page figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75em;
+}
+
+.adoptables-page figcaption {
+    gap: 0.75em;
+    display: flex;
+    flex-direction: column;
+}
+
+.adoptables-page figure h4 {
+    text-align: center;
+}
+
+.adoptables-page figure button {
+    font-size: 1.25em;
+    width: 100%;
+}
+
+/* Success Page */
+
+.success-page {
+    padding-block-start: 5em;
+    padding-block-end: 7.5em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #04c27f;
+    color: white;
+    gap: 5em;
+}
+
+.success-page button {
+    width: 12%;
+    font-size: 1.25em;
+    margin-block-end: 3em;
+}
+
+.success-page-div {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+
+@media screen and (max-width: 1500px) {
+    * {
+        font-size: 13px;
+    }
+
+    .adopt-block h2 {
+        font-size: 3em;
+    }
+}
+
+.test {
+    display: grid;
+    gap: 3em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.test section {
+    display: flex;
+    flex-direction: column;
+    padding: 3.75em 1.34em;
+    border-radius: 24px;
+    border: 2px solid white;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    gap: 3.75em;
+    max-inline-size: 100%;
+}
+
+.test section div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25em;
+}
+
+.test section p {
+    margin: 0;
+    font-size: 1.4em;
+    color: rgba(255, 255, 255, 0.80);
+}
+
+.test section button {
+    font-size: 1.5em;
+    padding: 0.8em 0;
+}
+
+#adopt-modal input[type="radio"] {
+    appearance: none;
+    background-color: #37383F;
+    border-radius: 99px;
+    border: 0;
+    align-self: stretch;
+    padding: 4px;
+    font-weight: 500;
+    width: 1.5em;
+    height: 1.5em;
+    margin-block-start: 0;
+}
+
+#adopt-modal input[type="radio"]:checked {
+    background-color: #04C27F;
+    background-image: url("../assets/check.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.dialog-radio-button-adopt-modal {
+    align-items: center;
+}
+
+.dialog-radio-button-adopt-modal > div {
+    display: flex;
+    align-items: center;
+}
+
+.donate-modal-radio-buttons > div {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.donate-modal-radio-button {
+    display: flex;
+    background-color: white;
+    padding: 0.5em 0.7em;
+    font-size: 16px;
+    border: 2px solid #3F96FC;
+    border-radius: 4px;
+    width: 33%;
+    color: #37383F;
+    font-weight: 500;
+    align-items: center;
+}
+
+.donate-modal-radio-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.donate-modal-radio-button input[type="radio"] {
+    appearance: none;
+    background-color: #37383F;
+    border-radius: 99px;
+    border: 0;
+    padding: 4px;
+    font-weight: 500;
+    width: 1.5em;
+    height: 1.5em;
+    margin-block-start: 0;
+    align-self: center;
+}
+
+.donate-modal-radio-button input[type="radio"]:checked {
+    background-color:#FF3D9A;
+    background-image: url("../assets/check.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.donate-modal-radio-button label {
+    color: #37383F;
+}
+
+.donate-modal-radio-button-label {
+    margin: 0;
+}
+
+/* Carousel */
+
+.carousel-container {
+    width: 96%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    max-width: 1190px;
+}
+
+.carousel-wrapper {
+    flex: 1;
+    overflow: hidden;
+    transition: transform 300ms ease-out;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    gap: 20px
+}
+
+.carousel img {
+    width: 25%;
+    transition: transform 300ms ease-out;
+}
+
+button {
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 22px;
+    background-color: #F5F5F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#prevBtn {
+    order: 0;
+    margin-right: 10px;
+}
+
+#nextBtn {
+    order: 3;
+    margin-left: 10px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-block-start: 3em;
+    gap: 1em;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.20);
+    cursor: pointer;
+}
+
+.active-dot {
+    background-color: #FFF;
 }

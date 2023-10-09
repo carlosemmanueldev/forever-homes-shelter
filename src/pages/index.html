@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>Forever Homes Shelter</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/style.css"/>
-    <script src="../../dist/code/script.js" defer></script>
+    <script src="../../dist/script.js" defer></script>
+    <script src="../../dist/carrossel.js" defer></script>
 </head>
 <body>
 <nav>
@@ -25,7 +26,10 @@
     <ul>
         <li><img src="../assets/phone-icon.svg" alt="">631-249-7325</li>
         <li>
-            <button class="btn-rounded donate-button"><img alt="A white heart" src="../assets/white-heart-icon.svg">Donate</button>
+            <button onclick="handlerModal('donate-modal')" class="btn-rounded donate-button">
+                <img alt="A white heart" src="../assets/white-heart-icon.svg">
+                Donate
+            </button>
         </li>
     </ul>
 </nav>
@@ -43,12 +47,18 @@
                 We have already saved the lives of 10,000 animals. We are not just a rescue, we are a refuge.
             </p>
 
-            <h3>Your Gift Helps Save Lives</h3>
+            <h4>Your Gift Helps Save Lives</h4>
 
             <div class="main-content-buttons">
-                <button class="btn-rounded donate-button"><img alt="A white heart" src="../assets/white-heart-icon.svg">Donate
+                <button onclick="handlerModal('donate-modal')" class="btn-rounded donate-button">
+                    <img alt="A white heart" src="../assets/white-heart-icon.svg">
+                    Donate
                 </button>
-                <button class="btn-rounded adopt-button"><img src="../assets/dog-icon.svg" alt="A dog">Apply to Adopt</button>
+
+                <button onclick="handlerModal('adopt-modal')" class="btn-rounded adopt-button">
+                    <img src="../assets/dog-icon.svg" alt="A dog">
+                    Apply to Adopt
+                </button>
             </div>
         </div>
 
@@ -70,8 +80,24 @@
                 <dd class="tails-text">Tails Found a Home</dd>
             </dl>
 
-            <div class="carousel">
-            </div>
+            <section class="carousel-container">
+                <button id="prevBtn"><img src="../assets/arrow-left.svg" alt=""></button>
+                <div class="carousel-wrapper">
+                    <div class="carousel">
+                        <img src="../assets/img-bob.png" alt="Imagem 1">
+                        <img src="../assets/img-clorinde.png" alt="Imagem 2">
+                        <img src="../assets/img-roney.png" alt="Imagem 3">
+                        <img src="../assets/img-flocks.png" alt="Imagem 1">
+
+                        <img src="../assets/img-aristotle.png" alt="Imagem 2">
+                        <img src="../assets/img-mary.png" alt="Imagem 3">
+                        <img src="../assets/img-robs.png" alt="Imagem 1">
+                        <img src="../assets/img-matt.png" alt="Imagem 2">
+                    </div>
+                </div>
+                <button id="nextBtn"><img src="../assets/arrow-right.svg" alt=""></button>
+            </section>
+            <div class="carousel-dots"></div>
         </div>
     </section>
 
@@ -79,93 +105,101 @@
         <div class="donations-block-div">
             <h2>With your donations we provide</h2>
 
-            <dl class="donations-block-dl">
-                <div class="item-shelter">
-                    <div class="inside-card">
+            <dl class="donations-block-grid">
+                <div class="donations-block-items">
+                    <div>
                         <dt class="">Shelter</dt>
                         <dt class=""><img src="../assets/house-icon.svg" alt=""></dt>
-                        <dd class="">We provide shelter for many of our cats and dogs. In addition to a roof over their
-                            heads, we pay for heat, food, water, and electricity, and general maintenance.
-                        </dd>
                     </div>
+
+                    <dd class="">We provide shelter for many of our cats and dogs. In addition to a roof over their
+                        heads, we pay for heat, food, water, and electricity, and general maintenance.
+                    </dd>
                 </div>
 
-                <div class="item-vetting">
-                    <div class="inside-card">
+                <div class="donations-block-items">
+                    <div>
                         <dt class="">Vetting</dt>
                         <dt class=""><img src="../assets/vetting-icon.svg" alt=""></dt>
-                        <dd class="">We provide shelter for many of our cats and dogs. In addition to a roof over their
-                            heads, we pay for heat, food, water, and electricity, and general maintenance.
-                        </dd>
                     </div>
+
+                    <dd class="">We provide vet care to our cats and dogs. We take care of general health assessments
+                        medications, vaccinations, spay/neuter procedures, and other surgeries.
+                    </dd>
+
                 </div>
 
-                <div class="item-facilities">
-                    <div class="inside-card">
+                <div class="donations-block-items">
+                    <div>
                         <dt class="">Facilities</dt>
                         <dt class=""><img src="../assets/building-icon.svg" alt=""></dt>
-                        <dd class="">We provide shelter for many of our cats and dogs. In addition to a roof over their
-                            heads, we pay for heat, food, water, and electricity, and general maintenance.
-                        </dd>
                     </div>
+
+                    <dd class="">We currently utilize a facility in a dilapidated state, which has necessitated
+                        significant investments to make it usable again. We are still restoring the building to its
+                        full potential.
+                    </dd>
+
                 </div>
 
-                <div class="item-transport">
-                    <div class="inside-card">
+                <div class="donations-block-items">
+                    <div>
                         <dt class="">Transport</dt>
                         <dt class=""><img src="../assets/transport-icon.svg" alt=""></dt>
-                        <dd class="">Each year, we transport over 600 dogs and 350 cats from kill shelters and emergency
-                            distressing situations to hospitals or our shelter, providing them with a second chance at
-                            life.
-                        </dd>
                     </div>
+
+                    <dd class="">Each year, we transport over 600 dogs and 350 cats from kill shelters and emergency
+                        distressing situations to hospitals or our shelter, providing them with a second chance at life.
+                    </dd>
                 </div>
 
-                <div class="item-fosters">
-                    <div class="inside-card">
+                <div class="donations-block-items">
+                    <div>
                         <dt class="">Fosters</dt>
                         <dt class=""><img src="../assets/fosters-icon.svg" alt=""></dt>
-                        <dd class="">We’re lucky to have a group of individuals who generously foster our cats and dogs
-                            in
-                            their homes. We cover all their veterinary needs and provide necessary food supplies.
-                        </dd>
                     </div>
+
+                    <dd class="">We’re lucky to have a group of individuals who generously foster our cats and dogs in
+                        their homes. We cover all their veterinary needs and provide necessary food supplies.
+                    </dd>
                 </div>
 
-                <div class="item-food">
-                    <div class="inside-card">
+                <div class="donations-block-items">
+                    <div>
                         <dt class="">Food</dt>
                         <dt class=""><img src="../assets/food-icon.svg" alt=""></dt>
-                        <dd class="">Each year, we nourish our cats and dogs with over 2,200 cans of wet food and 1,600
-                            pounds of dry food to ensure their well-being and keep them content and thriving.
-                        </dd>
                     </div>
-                </div>
 
+                    <dd class="">Each year, we nourish our  cats and dogs with over 2,200 cans of wet food and 1,600
+                        pounds of dry food to ensure their well-being and keep them content and thriving.
+                    </dd>
+                </div>
             </dl>
         </div>
     </section>
 
-   <section class="adoption-block">
+    <section class="adoption-block">
         <h2>Adoption information</h2>
-       <div class="adoption-block-div">
-           <img src="../assets/img-adoption-block.svg" alt="">
+        <div class="adoption-block-div">
+            <img src="../assets/img-adoption-block.svg" alt="">
 
-           <div>
-               <h3>Applicants must:</h3>
+            <div>
+                <h4>Applicants must:</h4>
 
-               <ul>
-                   <li>Live within a 90 mile radius of our shelter</li>
-                   <li>Accept the financial responsibility of vet care and pet care</li>
-                   <li>Donate $400 to adopt their dog/puppy; $125 for a cat; $150 for a kitten</li>
-                   <li>Be over 23 years of age to adopt a dog and 21 years of age to adopt a cat</li>
-                   <li>Be ready to adopt within 7-10 days</li>
-               </ul>
+                <ul>
+                    <li>Live within a 90 mile radius of our shelter</li>
+                    <li>Accept the financial responsibility of vet care and pet care</li>
+                    <li>Donate $400 to adopt their dog/puppy; $125 for a cat; $150 for a kitten</li>
+                    <li>Be over 23 years of age to adopt a dog and 21 years of age to adopt a cat</li>
+                    <li>Be ready to adopt within 7-10 days</li>
+                </ul>
 
-               <button class="btn-rounded adoption-block-btn">Apply to Adopt</button>
-           </div>
-       </div>
-   </section>
+                <button onclick="handlerModal('adopt-modal')" class="btn-rounded adoption-block-btn">
+                    Apply to Adopt
+                </button>
+            </div>
+        </div>
+    </section>
 
     <section class="difference-block">
         <div class="difference-block-div">
@@ -177,37 +211,41 @@
                 <img class="difference-block-first-grid-second-img" src="../assets/heart-drawing-right.svg" alt="">
             </div>
 
-            <div class="difference-block-second-grid">
-                <section>
-                    <div class="inside-card">
-                        <h4>Adopt or Foster</h4>
+            <div class="test">
+                <section class="">
+                    <div>
+                        <h5>Adopt or Foster</h5>
                         <p>Provide a forever or temporary home to a homeless animal.</p>
-                        <button class="btn-rounded difference-block-button-adoptables">View Adoptables</button>
                     </div>
+
+                    <button class="btn-rounded difference-block-button-adoptables">View Adoptables</button>
                 </section>
 
-                <section>
-                    <div class="inside-card">
-                        <h4>Volunteer</h4>
+                <section class="">
+                    <div>
+                        <h5>Volunteer</h5>
                         <p>We are always in need of passionate and friendly volunteers.</p>
-                        <button class="btn-rounded difference-block-button-involved">Get Involved</button>
                     </div>
+
+                    <button class="btn-rounded difference-block-button-involved">Get Involved</button>
                 </section>
 
-                <section>
-                    <div class="inside-card">
-                        <h4>Donate Monthly</h4>
+                <section class="">
+                    <div>
+                        <h5>Donate Monthly</h5>
                         <p>Regular donations is a reliable stream of funds to help sustain.</p>
-                        <button class="btn-rounded difference-block-button-learn">Give Monthly</button>
                     </div>
+
+                    <button class="btn-rounded difference-block-button-learn">Give Monthly</button>
                 </section>
 
-                <section>
-                    <div class="inside-card">
-                        <h4>Start a Fundraiser</h4>
+                <section class="">
+                    <div>
+                        <h5>Start a Fundraiser</h5>
                         <p>Start a fundraiser to raise funds and help us continue our mission.</p>
-                        <button class="btn-rounded difference-block-button-monthly">Learn More</button>
                     </div>
+
+                    <button class="btn-rounded difference-block-button-monthly">Learn More</button>
                 </section>
             </div>
         </div>
@@ -219,8 +257,11 @@
             <p class="adopt-block-p">Browse our adorable adoptables</p>
 
             <div class="adopt-block-buttons">
-                <button class="btn-rounded adopt-block-button-view">View Adoptables</button>
-                <button class="btn-rounded adopt-block-button-apply">Apply to Adopt</button>
+                <a role="button" href="adoptables-page.html" class="btn-rounded adopt-block-button-view">View Adoptables</a>
+
+                <button onclick="handlerModal('adopt-modal')" class="btn-rounded adopt-block-button-apply">
+                    Apply to Adopt
+                </button>
             </div>
 
             <img class="adopt-block-fish" src="../assets/adopt-block-fish.svg" alt="">
@@ -237,8 +278,9 @@
             <p>for updates on shelter events, fundraising parties, and heartwarming stories of animals finding their
                 forever homes.</p>
 
-            <form action="">
-                <input type="email" placeholder="Enter your email">
+            <form>
+                <label for="subscription-email" hidden></label>
+                <input id="subscription-email" type="email" placeholder="Enter your email" required>
                 <button type="submit" class="btn-rounded">Subscribe</button>
             </form>
         </div>
@@ -250,8 +292,8 @@
                 <img class="footer-logo-img" src="../assets/logo.png" alt="">
 
                 <div>
-                    <h3>FOREVER</h3>
-                    <h3 class="footer-logo-text-heart-icon">HOMES <img src="../assets/pink-heart-icon.svg" alt=""></h3>
+                    <h4>FOREVER</h4>
+                    <h4 class="footer-logo-text-heart-icon">HOMES <img src="../assets/pink-heart-icon.svg" alt=""></h4>
                 </div>
 
                 <p>Helps Save Lives</p>
@@ -277,15 +319,18 @@
 
             <address>
                 <div class="address-street">
-                    <img src="../assets/icon-address.svg" alt=""><p>PO Box 83644<br>Middleton, 2452 Wilson</p>
+                    <img src="../assets/icon-address.svg" alt="">
+                    <p>PO Box 83644<br>Middleton, 2452 Wilson</p>
                 </div>
 
                 <div class="address-phone">
-                    <img src="../assets/icon-phone.svg" alt=""><p>631-249-7325</p>
+                    <img src="../assets/icon-phone.svg" alt="">
+                    <p>631-249-7325</p>
                 </div>
 
                 <div class="address-mail">
-                    <img src="../assets/icon-mail.svg" alt=""><p>pet_home@gmail.com</p>
+                    <img src="../assets/icon-mail.svg" alt="">
+                    <p>pet_home@gmail.com</p>
                 </div>
 
                 <div class="social-media-icons">
@@ -296,8 +341,112 @@
             </address>
         </nav>
 
-        <h3 class="footer-message">We are not just a rescue, <b>we are a refuge</b></h3>
+        <h4 class="footer-message">We are not just a rescue, <b>we are a refuge</b></h4>
     </footer>
+
+    <dialog id="adopt-modal">
+        <div class="dialog">
+            <h3>Apply to Adopt</h3>
+            <p>Small text description can goes here</p>
+
+            <form method="dialog">
+                <div>
+                    <label for="email">EMAIL<b>*</b></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div>
+                    <label for="name">FULL NAME<b>*</b></label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="birthday">
+                    <label>DATE OF BIRTH<b>*</b></label>
+                    <div>
+                        <label for="birthday-day" hidden></label>
+                        <select id="birthday-day" required>
+                            <option value="" disabled selected hidden>Day</option>
+                            <option value="1">1</option>
+                        </select>
+
+                        <label for="birthday-month" hidden></label>
+                        <select id="birthday-month" required>
+                            <option value="" disabled selected hidden>Month</option>
+                            <option value="january">january</option>
+                        </select>
+
+                        <label for="birthday-year" hidden></label>
+                        <select id="birthday-year" required>
+                            <option value="" disabled selected hidden>Year</option>
+                            <option value="2000">2000</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="dialog-buttons">
+                    <div class="dialog-radio-button-adopt-modal">
+                        <label for="toc">I agree with <b>Privacy Policy</b> and <b>Terms of Conditions</b></label>
+                        <input type="radio" id="toc" name="toc" required>
+                    </div>
+
+                    <button class="dialog-button adopt-dialog-button" type="submit"><img
+                            src="../assets/dog-modal-button.svg" alt="">I wanna Adopt!
+                    </button>
+
+                    <button class="dialog-button cancel-dialog-button" onclick="handlerModal('adopt-modal')"
+                            type="reset">
+                        <img src="../assets/arrow-back.svg" alt="">Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="donate-modal">
+        <div class="dialog">
+            <h3 class="donate-modal-h3">Choose your Donate </h3>
+
+            <form action="success-page.html"  method="dialog">
+                <div>
+                    <label for="donation-email">EMAIL<b>*</b></label>
+                    <input type="email" id="donation-email" name="email" required>
+                </div>
+
+                <div>
+                    <label for="money">HOW MUCH CAN YOU HELP?<b>*</b></label>
+                    <input type="text" id="money" name="money" required>
+                </div>
+
+                <div class="donate-modal-radio-buttons">
+                    <label>PAYMENT METHOD<b>*</b></label>
+                    <div>
+                        <div class="donate-modal-radio-button">
+                            <label class="donate-modal-radio-button-label" for="pix">Pix</label>
+                            <input type="radio" id="pix" name="payment-method" value="pix" required>
+                        </div>
+
+                        <div class="donate-modal-radio-button">
+                            <label class="donate-modal-radio-button-label" for="credit-card">Credit Card</label>
+                            <input type="radio" id="credit-card" name="payment-method" value="credit-card" required>
+                        </div>
+
+                        <div class="donate-modal-radio-button">
+                            <label class="donate-modal-radio-button-label" for="paypal">Paypal</label>
+                            <input type="radio" id="paypal" name="payment-method" value="paypal" required>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-rounded donate-button" type="submit"><img
+                        src="../assets/white-heart-icon.svg" alt="">I wanna Help!
+                </button>
+
+                <button class="btn-rounded cancel-dialog-button" onclick="handlerModal('donate-modal')" type="reset">
+                    <img src="../assets/arrow-back.svg" alt="">Cancel
+                </button>
+            </form>
+        </div>
+    </dialog>
 </main>
 </body>
 </html>
