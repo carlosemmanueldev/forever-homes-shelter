@@ -11,14 +11,17 @@ document.addEventListener("DOMContentLoaded", function () {
     let carouselDots: number = 5;
 
     if(window.innerWidth >= 1920) {
-        imageWidth = carousel.firstElementChild!.clientWidth + 145;
+        visibleImages = 4;
+        imageWidth = carousel.firstElementChild!.clientWidth + 20;
     } else if (window.innerWidth >= 1280) {
-        imageWidth = carousel.firstElementChild!.clientWidth + 150;
+        visibleImages = 4;
+        imageWidth = carousel.firstElementChild!.clientWidth + 20;
     } else {
         visibleImages = 1;
         carouselDots = 8;
         imageWidth = carousel.firstElementChild!.clientWidth + 10;
     }
+
 
     // Função para atualizar os pontos (indicadores de página)
     function updateDots() {
@@ -44,6 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Função para mover o carrossel para a direita
     function moveCarouselRight(): void {
+        console.log(imageWidth)
+
         if (currentPosition < imageWidth * (8 - visibleImages)) {
             currentPosition += imageWidth;
             currentPage++;
