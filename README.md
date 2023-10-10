@@ -17,4 +17,6 @@ a diferentes tamanhos de tela. Também existe uma funcionalidade de se inscrever
 ### CSS
 
 ## :construction: Status do Projeto
-Em desenvolvimento
+Finalizado
+## :keyboard: Acessando o sistema
+Você deve compilar os arquivos de Typescript antes para que o projeto funcione corretamente
