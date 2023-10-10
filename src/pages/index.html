@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="../styles/style.css"/>
     <link rel="icon" type="image/x-icon" href="../assets/logo.png">
     <script src="../../dist/script.js" defer></script>
-    <script src="../../dist/carrossel.js" defer></script>
+    <script src="../../dist/carousel.js" defer></script>
+    <script src="../../dist/donations-carousel.js" defer></script>
 </head>
 <body>
 <nav>
@@ -49,6 +50,9 @@
                 We have already saved the lives of 10,000 animals. We are not just a rescue, we are a refuge.
             </p>
 
+            <img class="img-dog-mobile" src="../assets/dog-img-mobile.png" alt="A picture of a pug dog with a blue
+            background, he looks like he needs a pet.">
+
             <h4>Your Gift Helps Save Lives</h4>
 
             <div class="main-content-buttons">
@@ -64,7 +68,7 @@
             </div>
         </div>
 
-        <img src="../assets/img-first-block.svg" alt="A picture with two smaller pictures one of a pug dog with a blue background,
+        <img class="main-content-desktop-img" src="../assets/img-first-block.svg" alt="A picture with two smaller pictures one of a pug dog with a blue background,
         he looks like he needs a pet. The other image is bigger with a cat on a yellow background he has a dream balloon coming out
         of his head, inside of the balloon is a hand draw house.">
     </section>
@@ -88,15 +92,15 @@
                 <button id="prevBtn"><img src="../assets/arrow-left.svg" alt="A black left arrow."></button>
                 <div class="carousel-wrapper">
                     <div class="carousel">
-                        <img src="../assets/img-bob.png" alt="The picture of Bob, he is an orange cat with heterochromia.">
-                        <img src="../assets/img-clorinde.png" alt="The picture of Clorinde, she is a white cat with some orange on her head and nose, she's licking her nose on the picture.">
-                        <img src="../assets/img-roney.png" alt="The picture of Roney, he's a brown dog with long ears, they look cute on him.">
-                        <img src="../assets/img-flocks.png" alt="The picture of Flocks, he's a snow white dog very fluffy, he's smiling and looks very friendly.">
+                        <img class="carousel-img" src="../assets/img-bob.png" alt="The picture of Bob, he is an orange cat with heterochromia.">
+                        <img class="carousel-img" src="../assets/img-clorinde.png" alt="The picture of Clorinde, she is a white cat with some orange on her head and nose, she's licking her nose on the picture.">
+                        <img class="carousel-img" src="../assets/img-roney.png" alt="The picture of Roney, he's a brown dog with long ears, they look cute on him.">
+                        <img class="carousel-img" src="../assets/img-flocks.png" alt="The picture of Flocks, he's a snow white dog very fluffy, he's smiling and looks very friendly.">
 
-                        <img src="../assets/img-aristotle.png" alt="The picture of Aristotle, he's a brown dog and is posing for the picture like he owns the world.">
-                        <img src="../assets/img-mary.png" alt="The picture of Mary, she's a brindle cat and is posing for the picture looking up.">
-                        <img src="../assets/img-robs.png" alt="The picture of Robs, he's a pug dog, and really looks like he wants a family.">
-                        <img src="../assets/img-matt.png" alt="The picure of Matt, hes a brindle cat and looks like a bad cat that you'd like to have at home.">
+                        <img class="carousel-img" src="../assets/img-aristotle.png" alt="The picture of Aristotle, he's a brown dog and is posing for the picture like he owns the world.">
+                        <img class="carousel-img" src="../assets/img-mary.png" alt="The picture of Mary, she's a brindle cat and is posing for the picture looking up.">
+                        <img class="carousel-img" src="../assets/img-robs.png" alt="The picture of Robs, he's a pug dog, and really looks like he wants a family.">
+                        <img class="carousel-img" src="../assets/img-matt.png" alt="The picure of Matt, hes a brindle cat and looks like a bad cat that you'd like to have at home.">
                     </div>
                 </div>
                 <button id="nextBtn"><img src="../assets/arrow-right.svg" alt="A black right arrow."></button>
@@ -179,6 +183,84 @@
                     </dd>
                 </div>
             </dl>
+
+            <aside class="carousel-container">
+                <button id="prevBtnDonations"><img src="../assets/arrow-left.svg" alt="A black left arrow."></button>
+                <div class="carousel-wrapper">
+                    <div class="donations-carousel">
+                        <div class="donations-block-items donations-carousel-img">
+                            <div>
+                                <dt class="">Shelter</dt>
+                                <dt class=""><img src="../assets/house-icon.svg" alt="An icon of a pink house with a heart inside."></dt>
+                            </div>
+
+                            <dd class="">We provide shelter for many of our cats and dogs. In addition to a roof over their
+                                heads, we pay for heat, food, water, and electricity, and general maintenance.
+                            </dd>
+                        </div>
+
+                        <div class="donations-block-items donations-carousel-img">
+                            <div>
+                                <dt class="">Vetting</dt>
+                                <dt class=""><img src="../assets/vetting-icon.svg" alt="An icon of a green cross."></dt>
+                            </div>
+
+                            <dd class="">We provide vet care to our cats and dogs. We take care of general health assessments
+                                medications, vaccinations, spay/neuter procedures, and other surgeries.
+                            </dd>
+
+                        </div>
+
+                        <div class="donations-block-items donations-carousel-img">
+                            <div>
+                                <dt class="">Facilities</dt>
+                                <dt class=""><img src="../assets/building-icon.svg" alt="An icon of a blue building."></dt>
+                            </div>
+
+                            <dd class="">We currently utilize a facility in a dilapidated state, which has necessitated
+                                significant investments to make it usable again. We are still restoring the building to its
+                                full potential.
+                            </dd>
+
+                        </div>
+
+                        <div class="donations-block-items donations-carousel-img">
+                            <div>
+                                <dt class="">Transport</dt>
+                                <dt class=""><img src="../assets/transport-icon.svg" alt="An icon of purple pet carrier."></dt>
+                            </div>
+
+                            <dd class="">Each year, we transport over 600 dogs and 350 cats from kill shelters and emergency
+                                distressing situations to hospitals or our shelter, providing them with a second chance at life.
+                            </dd>
+                        </div>
+
+                        <div class="donations-block-items donations-carousel-img">
+                            <div>
+                                <dt class="">Fosters</dt>
+                                <dt class=""><img src="../assets/fosters-icon.svg" alt="An icon of a smiling yellow face."></dt>
+                            </div>
+
+                            <dd class="">We’re lucky to have a group of individuals who generously foster our cats and dogs in
+                                their homes. We cover all their veterinary needs and provide necessary food supplies.
+                            </dd>
+                        </div>
+
+                        <div class="donations-block-items donations-carousel-img">
+                            <div>
+                                <dt class="">Food</dt>
+                                <dt class=""><img src="../assets/food-icon.svg" alt="An icon a white bone for dogs."></dt>
+                            </div>
+
+                            <dd class="">Each year, we nourish our  cats and dogs with over 2,200 cans of wet food and 1,600
+                                pounds of dry food to ensure their well-being and keep them content and thriving.
+                            </dd>
+                        </div>
+                       </div>
+                </div>
+                <button id="nextBtnDonations"><img src="../assets/arrow-right.svg" alt="A black right arrow."></button>
+            </aside>
+            <div class="donations-carousel-dots"></div>
         </div>
     </section>
 
@@ -217,7 +299,7 @@
                 <img class="difference-block-first-grid-second-img" src="../assets/heart-drawing-right.svg" alt="The icon of a hand draw heart.">
             </div>
 
-            <div class="test">
+            <div class="difference-block-second-grid">
                 <section class="">
                     <div>
                         <h5>Adopt or Foster</h5>
@@ -274,6 +356,9 @@
             <img class="adopt-block-cat-img" src="../assets/adopt-block-cat-img.png" alt="The picture of a brindle cat, he looks curious.">
             <img class="adopt-block-bone" src="../assets/adopt-block-bone.svg" alt="The icon of a hand draw bone for dogs.">
             <img class="adopt-block-dog-img" src="../assets/adopt-block-dog-img.png" alt="The picture of a pug dog, and really looks like he wants a family.">
+
+            <img class="adopt-block-cat-fish-mobile" src="../assets/adopt-block-cat-fish-mobile.png" alt="The icon of a hand draw fish below there is a picture of a brindle cat, he looks curious.">
+            <img class="adopt-block-dog-bone-mobile" src="../assets/adopt-block-dog-bone-mobile.png" alt="The icon of a hand draw bone for dogs below there is a picture of a pug dog, and really looks like he wants a family.">
         </div>
     </section>
 
@@ -306,7 +391,7 @@
                 <p>Helps Save Lives</p>
             </section>
 
-            <ul>
+            <ul class="footer-menu-1">
                 <li>Adopt a Pet</li>
                 <li>Adoptable Dogs</li>
                 <li>Adoptable Cats</li>
@@ -315,7 +400,7 @@
                 <li>Get Involved</li>
             </ul>
 
-            <ul>
+            <ul class="footer-menu-2">
                 <li>Ways to Donate</li>
                 <li>Upcoming Events</li>
                 <li>Outreach Programs</li>
@@ -324,7 +409,7 @@
                 <li>Shop With Purpose</li>
             </ul>
 
-            <address>
+            <address class="footer-contact">
                 <div class="address-street">
                     <img src="../assets/icon-address.svg" alt="The icon of a pin.">
                     <p>PO Box 83644<br>Middleton, 2452 Wilson</p>

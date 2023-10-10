@@ -37,7 +37,7 @@
 <main>
     <section class="adoptables-page">
         <div class="adoptables-page-div">
-            <a href="index.html" class="btn-rounded cancel-dialog-button" type="reset">
+            <a href="index.html" class="adoptables-page-a btn-rounded cancel-dialog-button" type="reset">
                 <img src="../assets/arrow-back.svg" alt="The icon of a back arrow.">Back
             </a>
 
@@ -192,7 +192,7 @@
         <div class="dialog">
             <h3 class="donate-modal-h3">Choose your Donate </h3>
 
-            <form method="dialog">
+            <form action="success-page.html"  method="dialog">
                 <div>
                     <label for="donation-email">EMAIL<b>*</b></label>
                     <input type="email" id="donation-email" name="email" required>
@@ -203,9 +203,24 @@
                     <input type="text" id="money" name="money" required>
                 </div>
 
-                <div>
-                    <label for="payment-method">PAYMENT METHOD<b>*</b></label>
-                    <input type="radio" id="payment-method" name="payment-method" required>
+                <div class="donate-modal-radio-buttons">
+                    <label>PAYMENT METHOD<b>*</b></label>
+                    <div>
+                        <div class="donate-modal-radio-button">
+                            <label class="donate-modal-radio-button-label" for="pix">Pix</label>
+                            <input type="radio" id="pix" name="payment-method" value="pix" required>
+                        </div>
+
+                        <div class="donate-modal-radio-button">
+                            <label class="donate-modal-radio-button-label" for="credit-card">Credit Card</label>
+                            <input type="radio" id="credit-card" name="payment-method" value="credit-card" required>
+                        </div>
+
+                        <div class="donate-modal-radio-button">
+                            <label class="donate-modal-radio-button-label" for="paypal">Paypal</label>
+                            <input type="radio" id="paypal" name="payment-method" value="paypal" required>
+                        </div>
+                    </div>
                 </div>
 
                 <button class="btn-rounded donate-button" type="submit"><img

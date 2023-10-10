@@ -1,12 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
     const carousel: Element = document.querySelector(".carousel")!;
+    const carouselImages: NodeListOf<Element> = carousel.querySelectorAll(".carousel-img");
     const prevBtn: HTMLElement = document.getElementById("prevBtn")!;
     const nextBtn: HTMLElement = document.getElementById("nextBtn")!;
     const dotsContainer: Element = document.querySelector(".carousel-dots")!;
-    const imageWidth: number = carousel.firstElementChild!.clientWidth + 150;
-    const visibleImages: number = 4;
+    let visibleImages: number = 0;
     let currentPosition: number = 0;
     let currentPage: number = 0;
+    let imageWidth: number;
+    let carouselDots: number = 5;
+
+    if(window.innerWidth >= 1920) {
+        imageWidth = carousel.firstElementChild!.clientWidth + 145;
+    } else if (window.innerWidth >= 1280) {
+        imageWidth = carousel.firstElementChild!.clientWidth + 150;
+    } else {
+        visibleImages = 1;
+        carouselDots = 8;
+        imageWidth = carousel.firstElementChild!.clientWidth + 10;
+    }
 
     // Função para atualizar os pontos (indicadores de página)
     function updateDots() {
@@ -16,21 +28,21 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Função para mover o carrossel para a esquerda (anterior)
+    // Função para mover o carrossel para a esquerda
     function moveCarouselLeft(): void {
         if (currentPosition > 0) {
             currentPosition -= imageWidth;
             currentPage--;
         } else {
             // Se estiver na primeira imagem, ir para a última
-            currentPosition = imageWidth * (8 - visibleImages); // 8 é o número total de imagens
+            currentPosition = imageWidth * (8 - visibleImages);
             currentPage = 8 - visibleImages;
         }
         (carousel as HTMLElement).style.transform = `translateX(-${currentPosition}px)`;
         updateDots();
     }
 
-    // Função para mover o carrossel para a direita (próximo)
+    // Função para mover o carrossel para a direita
     function moveCarouselRight(): void {
         if (currentPosition < imageWidth * (8 - visibleImages)) {
             currentPosition += imageWidth;
@@ -44,12 +56,11 @@ document.addEventListener("DOMContentLoaded", function () {
         updateDots();
     }
 
-    // Adicionar ouvintes de eventos aos botões
     prevBtn.addEventListener("click", moveCarouselLeft);
     nextBtn.addEventListener("click", moveCarouselRight);
 
     // Criar os pontos (indicadores de página)
-    for (let i: number = 0; i < 5; i++) {
+    for (let i: number = 0; i < carouselDots; i++) {
         const dot: HTMLDivElement = document.createElement("div");
         dot.className = "dot";
         dot.addEventListener("click", (): void => {
@@ -64,3 +75,5 @@ document.addEventListener("DOMContentLoaded", function () {
     // Atualizar os pontos iniciais
     updateDots();
 });
+
+
